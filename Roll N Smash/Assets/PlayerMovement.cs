@@ -42,13 +42,31 @@ public class PlayerMovement : MonoBehaviour
     private void OnCollisionEnter(Collision collision)
     {
         GameObject PickUp = collision.collider.gameObject;
-        if(collision.collider.tag == "pickup")
+        if(collision.collider.tag == "enemy" && PickUp.GetComponent<EnemyScript>().dead == false)
+        {
+            size -= 1;
+            player.transform.localScale = new Vector3(size,size,size);
+            PickUp.GetComponent<EnemyScript>().dead = true;
+
+            CameraScript.cameraPos.x--;
+            CameraScript.cameraPos.y++;
+        }
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        GameObject PickUp = collider.gameObject;
+        if (collider.tag == "pickup")
         {
             size += 1;
-            player.transform.localScale = new Vector3(size,size,size);
+            player.transform.localScale = new Vector3(size, size, size);
             particleController.transform.position = PickUp.transform.position;
             particleController.GetComponent<ParticleSystem>().Play();
+            particleController.GetComponent<ParticleSystem>().startColor = PickUp.GetComponent<MeshRenderer>().material.color;
             Destroy(PickUp);
+
+            CameraScript.cameraPos.x++;
+            CameraScript.cameraPos.y--;
         }
     }
 }
