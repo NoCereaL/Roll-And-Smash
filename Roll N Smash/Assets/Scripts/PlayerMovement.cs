@@ -10,11 +10,15 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] GameObject particleController;
     private GameObject player;
     private Rigidbody rb;
+    public int randNum;
     // Start is called before the first frame update
     void Start()
     {
         player = this.gameObject;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        Color32[] color = {Color.red, Color.green, Color.blue };
+        randNum = Random.Range(0, 3);
+        player.GetComponent<MeshRenderer>().material.color = color[randNum];
     }
 
     // Update is called once per frame
@@ -58,12 +62,17 @@ public class PlayerMovement : MonoBehaviour
         GameObject PickUp = collider.gameObject;
         if (collider.tag == "pickup")
         {
+
+            //Increase Size on Trigger Enter
             size += 1;
             player.transform.localScale = new Vector3(size, size, size);
             particleController.transform.position = PickUp.transform.position;
             particleController.GetComponent<ParticleSystem>().Play();
             particleController.GetComponent<ParticleSystem>().startColor = PickUp.GetComponent<MeshRenderer>().material.color;
             Destroy(PickUp);
+
+            //Change the Player Color Depending on Orb Color
+            player.GetComponent<MeshRenderer>().material.color = PickUp.GetComponent<MeshRenderer>().material.color;
 
             CameraScript.cameraPos.x++;
             CameraScript.cameraPos.y--;
