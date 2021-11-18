@@ -447,7 +447,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -6362,6 +6362,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4969953794478634649, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4969953794482833497, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
@@ -6413,6 +6417,14 @@ PrefabInstance:
     - target: {fileID: 4969953794488408405, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181523206197324803, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+      propertyPath: m_Size.z
+      value: 0.31114197
+      objectReference: {fileID: 0}
+    - target: {fileID: 7181523206197324803, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+      propertyPath: m_Center.z
+      value: 0.05744362
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
