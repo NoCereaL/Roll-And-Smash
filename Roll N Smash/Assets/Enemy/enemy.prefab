@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7087695367927545918}
   - component: {fileID: 7181523206197324803}
+  - component: {fileID: 1617819834428824127}
   m_Layer: 0
   m_Name: FloorCheck
   m_TagString: Untagged
@@ -44,6 +45,20 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.44105282, y: 0.045213103, z: 0.23301697}
   m_Center: {x: 0.0032232553, y: -0.003880918, z: 0.018381119}
+--- !u!114 &1617819834428824127
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 749523072626080308}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9794631e40c82475e8fa87c7fc97741a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemy: {fileID: 4969953794488108343}
+  boxCollider: {fileID: 0}
 --- !u!1 &4969953794488108321
 GameObject:
   m_ObjectHideFlags: 0
@@ -1111,7 +1126,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e3e71fdcef44443698c6bd9e193af479, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enemy: {fileID: 0}
+  enemy: {fileID: 4969953794488108343}
   rigidbodies:
   - {fileID: 7078309303723898322}
   - {fileID: 4871529863063862173}
