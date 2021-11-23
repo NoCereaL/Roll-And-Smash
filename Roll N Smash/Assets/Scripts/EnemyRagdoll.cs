@@ -2,15 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enemyDeath : MonoBehaviour
+public class EnemyRagdoll : MonoBehaviour
 {
-
-    [SerializeField] GameObject player;
-    private GameObject enemy;
+    [SerializeField] GameObject enemy;
+    [SerializeField] Rigidbody[] rigidbodies;
     // Start is called before the first frame update
     void Start()
     {
-        enemy = this.gameObject;
     }
 
     // Update is called once per frame
@@ -23,7 +21,11 @@ public class enemyDeath : MonoBehaviour
     {
         if(collision.collider.tag == "Player")
         {
-            enemy.GetComponent<Rigidbody>().isKinematic = false;
+            for (int i = 0; i >= rigidbodies.Length; i--)
+            {
+                rigidbodies[i].isKinematic = false;
+            }
+            enemy.GetComponent<Animator>().enabled = false;
         }
     }
 }
