@@ -30,13 +30,10 @@ public class EnemyRagdoll : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player")
         {
             enemy.GetComponent<EnemyScript>().dead = true;
-            for (int i = 0; i >= rigidbodies.Length; i--)
-            {
-                rigidbodies[i].isKinematic = false;
-            }
+
             enemy.GetComponent<Animator>().enabled = false;
         }
     }

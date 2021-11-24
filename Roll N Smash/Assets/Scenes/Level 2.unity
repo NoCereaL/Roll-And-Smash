@@ -5515,6 +5515,10 @@ PrefabInstance:
       value: 0.1
       objectReference: {fileID: 0}
     - target: {fileID: 3669433801729024901, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+      propertyPath: m_UseGravity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3669433801729024901, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
       propertyPath: m_IsKinematic
       value: 0
       objectReference: {fileID: 0}
@@ -5601,6 +5605,10 @@ PrefabInstance:
     - target: {fileID: 7504886528574543505, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
       propertyPath: m_ConnectedAnchor.y
       value: 0.32905227
+      objectReference: {fileID: 0}
+    - target: {fileID: 8289840888186038983, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+      propertyPath: throwForce
+      value: 200
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
@@ -5909,6 +5917,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 85938fd8fc1494c4f814bbc8350987ba, type: 3}
+--- !u!1 &1569487854 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4969953794488108343, guid: ec452e764128b824d97ab6aef1d35a0f, type: 3}
+  m_PrefabInstance: {fileID: 1083924595}
+  m_PrefabAsset: {fileID: 0}
+--- !u!64 &1569487861
+MeshCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1569487854}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 4
+  m_Convex: 1
+  m_CookingOptions: 30
+  m_Mesh: {fileID: 0}
 --- !u!1001 &1573121055
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6373,9 +6400,17 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 1149776292859566764, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
+      propertyPath: m_Mass
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 1149776292859566765, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
+      propertyPath: speed
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1149776292859566765, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: maxSpeed
-      value: 8
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 1149776292859566765, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: particleController
