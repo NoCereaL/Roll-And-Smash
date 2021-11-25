@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
+    [SerializeField] Camera cam;
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
     [SerializeField] float size;
@@ -54,10 +55,11 @@ public class PlayerMovement : MonoBehaviour
             player.transform.localScale = new Vector3(size,size,size);
             PickUp.GetComponent<EnemyScript>().dead = true;
 
+            cam.fieldOfView++;
             CameraScript.cameraPos.x--;
             CameraScript.cameraPos.y++;
         }
-
+        //cam.fieldOfView++;
         //maxSpeed += 100;
         //rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
 
