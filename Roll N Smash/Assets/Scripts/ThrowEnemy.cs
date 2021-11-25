@@ -19,7 +19,12 @@ public class ThrowEnemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (enemy)
+        {
+            Debug.Log("Hit Reg");
+            rb.AddForce(new Vector3(throwForce, throwForce, throwForce));
+            rb.velocity = new Vector3(0f, 0f, throwForce);
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
