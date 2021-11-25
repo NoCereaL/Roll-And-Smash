@@ -95,4 +95,5 @@ public class PlayerMovement : MonoBehaviour
         yield return new WaitForSeconds(0.1f);
         maxSpeed = defaultSpeed;
     }
+    //Create a trigger on/infront of enemies to increase player speed using a courotine when trigger enter to increase speed when barging
 }
