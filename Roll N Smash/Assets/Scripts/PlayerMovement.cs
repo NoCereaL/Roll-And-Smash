@@ -7,6 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
     [SerializeField] float size;
+    private float defaultSpeed;
     [SerializeField] GameObject particleController;
     private GameObject player;
     private Rigidbody rb;
@@ -19,6 +20,7 @@ public class PlayerMovement : MonoBehaviour
         Color32[] color = {Color.red, Color.green, Color.blue };
         randNum = Random.Range(0, 3);
         player.GetComponent<MeshRenderer>().material.color = color[randNum];
+        defaultSpeed = maxSpeed;
     }
 
     // Update is called once per frame
@@ -55,6 +57,11 @@ public class PlayerMovement : MonoBehaviour
             CameraScript.cameraPos.x--;
             CameraScript.cameraPos.y++;
         }
+
+        //maxSpeed += 100;
+        //rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
+
+        StartCoroutine(thrustForward());
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -77,5 +84,13 @@ public class PlayerMovement : MonoBehaviour
             CameraScript.cameraPos.x++;
             CameraScript.cameraPos.y--;
         }
+    }
+
+    IEnumerator thrustForward()
+    {
+        maxSpeed += 100;
+        rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
+        yield return new WaitForSeconds(0.1f);
+        maxSpeed = defaultSpeed;
     }
 }

@@ -7,7 +7,7 @@ public class EnemyRagdoll : MonoBehaviour
     [SerializeField] GameObject enemy;
     [SerializeField] Rigidbody[] rigidbodies;
     [SerializeField] Rigidbody rigidbody;
-    [SerializeField] Collider collider;
+    public float throwForce;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +35,10 @@ public class EnemyRagdoll : MonoBehaviour
             enemy.GetComponent<EnemyScript>().dead = true;
 
             enemy.GetComponent<Animator>().enabled = false;
+
+            rigidbody.AddForce(new Vector3(0,0,400), ForceMode.Impulse);
+
+            
         }
     }
 }
