@@ -12,6 +12,7 @@ public class EnemyRagdoll : MonoBehaviour
     void Start()
     {
         rigidbody = this.gameObject.GetComponent<Rigidbody>();
+        enemy = this.gameObject;
     }
 
     // Update is called once per frame

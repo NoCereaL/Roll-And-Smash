@@ -63,7 +63,7 @@ public class PlayerMovement : MonoBehaviour
         //maxSpeed += 100;
         //rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
 
-        StartCoroutine(thrustForward());
+        //StartCoroutine(thrustForward());
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -90,7 +90,7 @@ public class PlayerMovement : MonoBehaviour
 
     IEnumerator thrustForward()
     {
-        maxSpeed += 100;
+        maxSpeed = 100;
         rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
         yield return new WaitForSeconds(0.1f);
         maxSpeed = defaultSpeed;
