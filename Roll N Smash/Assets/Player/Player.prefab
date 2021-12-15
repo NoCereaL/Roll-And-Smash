@@ -111,10 +111,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9823c1865587fdc40872b33960604d54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
-  maxSpeed: 4
+  cam: {fileID: 0}
+  speed: 6
+  maxSpeed: 10
   size: 1
   particleController: {fileID: 0}
+  randNum: 0
+  particleColor: {fileID: 2100000, guid: ce0fb2483e496954fbf0b678e138d734, type: 2}
 --- !u!114 &1149776292859566766
 MonoBehaviour:
   m_ObjectHideFlags: 0
