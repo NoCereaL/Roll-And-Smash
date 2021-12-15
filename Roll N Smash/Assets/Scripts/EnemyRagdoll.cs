@@ -26,6 +26,8 @@ public class EnemyRagdoll : MonoBehaviour
         if(enemy.GetComponent<EnemyScript>().dead == true)
         {
             rigidbody.isKinematic = false;
+            enemy.GetComponent<Animator>().enabled = false;
+
         }
     }
 

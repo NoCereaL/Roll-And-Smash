@@ -7,7 +7,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] Camera cam;
     [SerializeField] float speed;
     [SerializeField] float maxSpeed;
-    [SerializeField] float size;
+    public float size;
     private float defaultSpeed;
     [SerializeField] GameObject particleController;
     private GameObject player;
@@ -48,8 +48,8 @@ public class PlayerMovement : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        GameObject PickUp = collision.collider.gameObject;
-        if(collision.collider.tag == "enemy" && PickUp.GetComponent<EnemyScript>().dead == false)
+        //GameObject PickUp = collision.collider.gameObject;
+        /*if(collision.collider.tag == "enemy" && PickUp.GetComponent<EnemyScript>().dead == false)
         {
             size -= 1;
             player.transform.localScale = new Vector3(size,size,size);
@@ -58,7 +58,7 @@ public class PlayerMovement : MonoBehaviour
             cam.fieldOfView++;
             CameraScript.cameraPos.x--;
             CameraScript.cameraPos.y++;
-        }
+        }*/
         //cam.fieldOfView++;
         //maxSpeed += 100;
         //rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
@@ -73,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         {
 
             //Increase Size on Trigger Enter
-            size += 1;
+            size += 0.5f;
             player.transform.localScale = new Vector3(size, size, size);
             particleController.transform.position = PickUp.transform.position;
             particleController.GetComponent<ParticleSystem>().Play();
