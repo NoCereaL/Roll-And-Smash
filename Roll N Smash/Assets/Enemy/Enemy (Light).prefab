@@ -703,6 +703,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dead: 0
+  enemyMesh: {fileID: 5927050894214576146}
+  color:
+    serializedVersion: 2
+    rgba: 255
 --- !u!114 &5927050894214576204
 MonoBehaviour:
   m_ObjectHideFlags: 0

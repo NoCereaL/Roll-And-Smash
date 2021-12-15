@@ -20,7 +20,12 @@ public class EnemyParts : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        if(collision.collider.tag == "Player")
+        if (collision.collider.tag == "Player" && enemy.GetComponent<EnemyScript>().dead == false && enemy.GetComponentInChildren<SkinnedMeshRenderer>().material.color != player.GetComponent<MeshRenderer>().material.color)
+        {
+            player.GetComponent<PlayerMovement>().size -= 0.5f;
+        }
+
+        if (collision.collider.tag == "Player")
         {
             enemy.GetComponent<EnemyScript>().dead = true;
             enemy.GetComponent<Rigidbody>().isKinematic = true;

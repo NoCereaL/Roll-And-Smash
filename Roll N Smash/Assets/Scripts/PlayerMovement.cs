@@ -29,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     {
         Move();
         AutoMove();
+        player.transform.localScale = new Vector3(size, size, size);
     }
 
     public void Move()
