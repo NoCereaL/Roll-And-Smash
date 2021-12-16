@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyScript : MonoBehaviour
 {
     public bool dead;
+    public float size;
     public GameObject enemyMesh;
     public Color32 color;
     // Start is called before the first frame update

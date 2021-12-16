@@ -85,8 +85,11 @@ public class PlayerMovement : MonoBehaviour
             //Change the Player Color Depending on Orb Color
             player.GetComponent<MeshRenderer>().material.color = PickUp.GetComponent<MeshRenderer>().material.color;
 
-            CameraScript.cameraPos.x++;         //x is changing y-axis of camera  
-            CameraScript.cameraPos.y--;         //y is changing z-axis of camera
+            CameraScript.cameraPos.x = CameraScript.cameraPos.x + 0.5f;         //x is changing y-axis of camera  
+            CameraScript.cameraPos.y = CameraScript.cameraPos.y - 0.5f;         //y is changing z-axis of camera
+
+            //CameraScript.cameraPos.x++;         //x is changing y-axis of camera  
+            //CameraScript.cameraPos.y--;         //y is changing z-axis of camera
         }
     }
 

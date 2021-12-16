@@ -22,9 +22,9 @@ public class EnemyParts : MonoBehaviour
     {
         if (collision.collider.tag == "Player" && enemy.GetComponent<EnemyScript>().dead == false && enemy.GetComponentInChildren<SkinnedMeshRenderer>().material.color != player.GetComponent<MeshRenderer>().material.color)
         {
-            player.GetComponent<PlayerMovement>().size -= 0.5f;
-            CameraScript.cameraPos.x--;
-            CameraScript.cameraPos.y++;
+            player.GetComponent<PlayerMovement>().size -= enemy.GetComponent<EnemyScript>().size;
+            CameraScript.cameraPos.x = CameraScript.cameraPos.x - enemy.GetComponent<EnemyScript>().size;
+            CameraScript.cameraPos.y = CameraScript.cameraPos.y + enemy.GetComponent<EnemyScript>().size;
         }
 
         if (collision.collider.tag == "Player")
