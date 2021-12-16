@@ -11,7 +11,7 @@ public class GateScript : MonoBehaviour
     public bool g;
     public bool kg;
     public bool passed;
-    public GameObject player;
+    private GameObject player;
     [SerializeField] TextMeshPro textMesh;
     
     // Start is called before the first frame update
