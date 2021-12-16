@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class LevelBarScript : MonoBehaviour
 {
@@ -33,6 +34,8 @@ public class LevelBarScript : MonoBehaviour
     {
         levelBar.maxValue = TotalDistance();
         levelBar.value = GetDistance();
+        currentLevelText.text = (SceneManager.GetActiveScene().buildIndex) + "";
+        nextLevelText.text = (SceneManager.GetActiveScene().buildIndex + 1) + "";
     }
 
     public float GetDistance()

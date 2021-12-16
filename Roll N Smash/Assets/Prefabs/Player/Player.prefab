@@ -17,6 +17,7 @@ GameObject:
   - component: {fileID: 1149776292859566764}
   - component: {fileID: 1149776292859566739}
   - component: {fileID: 1316723382079453341}
+  - component: {fileID: 2794992395823892837}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -113,12 +114,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  speed: 6
-  maxSpeed: 10
+  speed: 10
+  maxSpeed: 15
   size: 1
   particleController: {fileID: 0}
   randNum: 0
   particleColor: {fileID: 2100000, guid: ce0fb2483e496954fbf0b678e138d734, type: 2}
+  pos: {x: 0, y: 0, z: 0}
 --- !u!114 &1149776292859566766
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,3 +176,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   textMesh: {fileID: 0}
+--- !u!114 &2794992395823892837
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1149776292859566763}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: baa3824ec288daa4f83a43a797d2dd4c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textHolder: {fileID: 0}
+  retryButton: {fileID: 0}
+  retryAlpha: {fileID: 0}
