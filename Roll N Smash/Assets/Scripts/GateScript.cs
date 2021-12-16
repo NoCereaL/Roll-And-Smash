@@ -82,8 +82,8 @@ public class GateScript : MonoBehaviour
                 }
                 else
                 {
-                    CameraScript.cameraPos.x++;
-                    CameraScript.cameraPos.y--;
+                    CameraScript.cameraPos.x = CameraScript.cameraPos.x + size;
+                    CameraScript.cameraPos.y = CameraScript.cameraPos.y - size;
                 }
             }
             if(size < 0)
@@ -102,8 +102,8 @@ public class GateScript : MonoBehaviour
                 }
                 else
                 {
-                    CameraScript.cameraPos.x--;
-                    CameraScript.cameraPos.y++;
+                    CameraScript.cameraPos.x = CameraScript.cameraPos.x - size;
+                    CameraScript.cameraPos.y = CameraScript.cameraPos.y + size;
                 }
             }
         }
