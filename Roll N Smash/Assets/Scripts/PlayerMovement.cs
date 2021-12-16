@@ -14,6 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public int randNum;
     [SerializeField] Material particleColor;
+    [SerializeField] Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,6 +29,7 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        TouchMove();
         Move();
         AutoMove();
         player.transform.localScale = new Vector3(size, size, size);
@@ -37,6 +39,16 @@ public class PlayerMovement : MonoBehaviour
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         transform.position += movement * speed * Time.deltaTime;
+    }
+
+    public void TouchMove()
+    {
+        if (Input.touchCount > 0)
+        {
+            Touch touch = Input.GetTouch(0);
+            pos = Camera.main.ScreenToWorldPoint(touch.position);
+            transform.position = new Vector3(pos.x, transform.position.y, transform.position.z);
+        }
     }
 
     public void AutoMove()
