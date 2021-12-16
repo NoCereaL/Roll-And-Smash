@@ -21,5 +21,9 @@ public class EnemyScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(dead == true)
+        {
+            enemyMesh.GetComponent<SkinnedMeshRenderer>().material.color = Color.gray;
+        }
     }
 }
