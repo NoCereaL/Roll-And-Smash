@@ -13,4 +13,9 @@ public class UIScript : MonoBehaviour
         retryAlpha.SetActive(false);
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void nextLevel()
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+    }
 }

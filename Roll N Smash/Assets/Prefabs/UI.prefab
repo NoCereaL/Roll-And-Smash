@@ -277,7 +277,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 8222078030937443342}
         m_TargetAssemblyTypeName: UIScript, Assembly-CSharp
-        m_MethodName: retry
+        m_MethodName: nextLevel
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

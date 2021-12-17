@@ -47,11 +47,11 @@ public class PlayerMovement : MonoBehaviour
 
     public void TouchMove()
     {
-        if (Input.touchCount > 0)
+        if (Input.touchCount >= 1)
         {
             Touch touch = Input.GetTouch(0);
-            pos = Camera.main.ScreenToWorldPoint(touch.position);
-            transform.position = new Vector3(pos.x, transform.position.y, transform.position.z);
+            pos = touch.position;
+            //transform.position = new Vector3(pos.x, transform.position.y, transform.position.z);
         }
     }
 
