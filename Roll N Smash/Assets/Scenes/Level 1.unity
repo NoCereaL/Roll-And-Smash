@@ -62738,6 +62738,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4639127679318755132, guid: 309c9960342462446ba89b7a0a5d032a, type: 3}
   m_PrefabInstance: {fileID: 1830348188}
   m_PrefabAsset: {fileID: 0}
+--- !u!224 &1851148816 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 5691278856199257517, guid: 0356dbd60485c6947bc8165d0a6c0e9a, type: 3}
+  m_PrefabInstance: {fileID: 5691278856285117863}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1864930330
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -63332,6 +63337,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 3885727992203542522, guid: 85938fd8fc1494c4f814bbc8350987ba, type: 3}
   m_PrefabInstance: {fileID: 636122939}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2015658149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359666591211814708, guid: 0356dbd60485c6947bc8165d0a6c0e9a, type: 3}
+  m_PrefabInstance: {fileID: 5691278856285117863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2036701729
 PrefabInstance:
@@ -65783,7 +65793,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1149776292859566767, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 60
+      value: 61
       objectReference: {fileID: 0}
     - target: {fileID: 1149776292859566767, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: m_LocalPosition.z
@@ -65817,6 +65827,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1316723382079453341, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
+      propertyPath: ui
+      value: 
+      objectReference: {fileID: 1851148816}
+    - target: {fileID: 1316723382079453341, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
+      propertyPath: uiGems
+      value: 
+      objectReference: {fileID: 2015658149}
     - target: {fileID: 1316723382079453341, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: textMesh
       value: 
