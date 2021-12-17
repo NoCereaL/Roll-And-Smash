@@ -827,6 +827,7 @@ GameObject:
   - component: {fileID: 5691278856199257504}
   - component: {fileID: 5691278856199257516}
   - component: {fileID: 8222078030937443342}
+  - component: {fileID: 8922092549800561815}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -952,6 +953,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   retryButton: {fileID: 415713180211558849}
   retryAlpha: {fileID: 8641297323761181466}
+--- !u!114 &8922092549800561815
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691278856199257505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87582c2f57cfb2947913f5442c0efb5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemText: {fileID: 736298431229930279}
 --- !u!1 &5691278856309839935
 GameObject:
   m_ObjectHideFlags: 0

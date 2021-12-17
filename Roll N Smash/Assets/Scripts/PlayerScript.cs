@@ -7,6 +7,7 @@ public class PlayerScript : MonoBehaviour
 {
     public TextMeshPro textMesh;
     private PlayerMovement player;
+    public AudioSource collectSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -17,5 +18,20 @@ public class PlayerScript : MonoBehaviour
     void Update()
     {
         textMesh.text = player.size + "kg";
+    }
+
+    public int GetGems()
+    {
+        return PlayerPrefs.GetInt("Gems");
+    }
+
+    private void OnTriggerEnter(Collider collider)
+    {
+        if(collider.tag == "gem")
+        {
+            PlayerPrefs.SetInt("Gems", GetGems()+5);
+            Destroy(collider.gameObject);
+            collectSound.Play();
+        }
     }
 }
