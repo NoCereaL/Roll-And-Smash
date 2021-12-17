@@ -1514,3 +1514,11 @@ AssetImportParameters requested are different than current active one (requested
   custom:graphics/normal-map-encoding: 01000000000000000000000000000000 -> 02000000000000000000000000000000
   custom:audio-decoder-ogg-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
   custom:audio-encoder-webm-vorbis: bf7c407c2cedff20999df2af8eb42d56 -> 
+========================================================================
+Received Import Request.
+  Time since last request: 7300.983821 seconds.
+  path: Assets/Scenes/Level 1.unity
+  artifactKey: Guid(7cfb876f143f66a429aa131bb2a2f246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Scenes/Level 1.unity using Guid(7cfb876f143f66a429aa131bb2a2f246) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '376ea345fbcc680662ac04a8a2b3da90') in 0.055481 seconds 
+  Import took 0.068141 seconds .
+
