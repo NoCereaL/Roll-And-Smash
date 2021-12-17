@@ -10,6 +10,9 @@ public class PlayerDeath : MonoBehaviour
     public GameObject textHolder;
     public GameObject retryButton;
     public GameObject retryAlpha;
+
+    public AudioSource deathSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,6 +30,7 @@ public class PlayerDeath : MonoBehaviour
     {
         if (player.GetComponent<PlayerMovement>().size <= 0)
         {
+            player.GetComponent<PlayerMovement>().dead = true;
             player.GetComponent<PlayerMovement>().enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionY;
             rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, 0.015f);
@@ -42,5 +46,21 @@ public class PlayerDeath : MonoBehaviour
     {
         yield return new WaitForSeconds(5);
         rb.velocity = Vector3.zero;
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (player.GetComponent<PlayerMovement>().size <= 0)
+        {
+            deathSound.Play();
+        }
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (player.GetComponent<PlayerMovement>().size <= 0)
+        {
+            deathSound.Play();
+        }
     }
 }

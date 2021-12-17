@@ -14,7 +14,7 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public int randNum;
     [SerializeField] Material particleColor;
-
+    public bool dead;
     public AudioSource increaseSound;
     public AudioSource decreaseSound;
 
