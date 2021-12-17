@@ -34,7 +34,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         AutoMove();
-        TouchMove();
+        //TouchMove();
         Move();
         player.transform.localScale = new Vector3(size, size, size);
     }
@@ -50,7 +50,12 @@ public class PlayerMovement : MonoBehaviour
         if (Input.touchCount >= 1)
         {
             Touch touch = Input.GetTouch(0);
-            pos = touch.position;
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);
+            Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, transform.position.z));
+            float distance;
+            xy.Raycast(ray, out distance);
+            pos = ray.GetPoint(distance);
+            //pos = cam.ScreenToWorldPoint(touch.position);
             //transform.position = new Vector3(pos.x, transform.position.y, transform.position.z);
         }
     }
