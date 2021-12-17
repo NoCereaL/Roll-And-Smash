@@ -33,9 +33,9 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        AutoMove();
         TouchMove();
         Move();
-        AutoMove();
         player.transform.localScale = new Vector3(size, size, size);
     }
 

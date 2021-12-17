@@ -31,7 +31,7 @@ public class PlayerScript : MonoBehaviour
     {
         if(collider.tag == "gem")
         {
-            PlayerPrefs.SetInt("Gems", GetGems()+5);
+            PlayerPrefs.SetInt("Gems", GetGems()+collider.gameObject.GetComponent<GemValue>().gemValue);
             Destroy(collider.gameObject);
             GameObject gem = Instantiate(uiGems, ui);
             gem.SetActive(true);

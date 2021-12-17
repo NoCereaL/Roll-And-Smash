@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5405892970319771830}
   - component: {fileID: 4629416283416953364}
   - component: {fileID: 4754193302374263154}
+  - component: {fileID: 383253712521456139}
   m_Layer: 0
   m_Name: Gem
   m_TagString: gem
@@ -121,3 +122,16 @@ MonoBehaviour:
   endScale: {x: 0.6, y: 0.6, z: 0.6}
   scaleSpeed: 1
   scaleRate: 0.5
+--- !u!114 &383253712521456139
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4642303531071789270}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6a72a62d232e09745bcf83f2679dac56, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gemValue: 5
