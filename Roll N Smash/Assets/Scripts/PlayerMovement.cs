@@ -14,6 +14,10 @@ public class PlayerMovement : MonoBehaviour
     private Rigidbody rb;
     public int randNum;
     [SerializeField] Material particleColor;
+
+    public AudioSource increaseSound;
+    public AudioSource decreaseSound;
+
     [SerializeField] Vector3 pos;
     // Start is called before the first frame update
     void Start()
@@ -102,6 +106,8 @@ public class PlayerMovement : MonoBehaviour
 
             //CameraScript.cameraPos.x++;         //x is changing y-axis of camera  
             //CameraScript.cameraPos.y--;         //y is changing z-axis of camera
+
+            increaseSound.Play();
         }
     }
 

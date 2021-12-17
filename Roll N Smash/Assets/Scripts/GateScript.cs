@@ -13,6 +13,10 @@ public class GateScript : MonoBehaviour
     public bool passed;
     private GameObject player;
     [SerializeField] TextMeshPro textMesh;
+
+    //Audio
+    public AudioSource increaseSound;
+    public AudioSource decreaseSound;
     
     // Start is called before the first frame update
     void Start()
@@ -74,16 +78,19 @@ public class GateScript : MonoBehaviour
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x + (size / 1000000);
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y - (size / 1000000);
+                    increaseSound.Play();
                 }
                 else if (g == true)
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x + (size / 1000);
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y - (size / 1000);
+                    increaseSound.Play();
                 }
                 else
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x + size;
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y - size;
+                    increaseSound.Play();
                 }
             }
             if(size < 0)
@@ -94,16 +101,19 @@ public class GateScript : MonoBehaviour
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x - (size / 1000000);
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y + (size / 1000000);
+                    decreaseSound.Play();
                 }
                 else if (g == true)
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x - (size / 1000);
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y + (size / 1000);
+                    decreaseSound.Play();
                 }
                 else
                 {
                     CameraScript.cameraPos.x = CameraScript.cameraPos.x - size;
                     CameraScript.cameraPos.y = CameraScript.cameraPos.y + size;
+                    decreaseSound.Play();
                 }
             }
         }

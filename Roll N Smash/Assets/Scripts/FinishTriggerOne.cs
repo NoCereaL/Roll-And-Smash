@@ -15,6 +15,7 @@ public class FinishTriggerOne : MonoBehaviour
     //UI
     public GameObject nextLevel;
     public GameObject alpha;
+    public AudioSource finishSound;
 
     // Start is called before the first frame update
     void Start()
@@ -50,6 +51,7 @@ public class FinishTriggerOne : MonoBehaviour
         Instantiate(dancingPlayer, playerTransfrom);
         nextLevel.SetActive(true);
         alpha.SetActive(true);
+        finishSound.Play();
     }
 
     private void OnTriggerEnter(Collider collider)

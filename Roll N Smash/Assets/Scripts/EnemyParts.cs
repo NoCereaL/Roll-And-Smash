@@ -6,10 +6,12 @@ public class EnemyParts : MonoBehaviour
 {
     [SerializeField] GameObject enemy;
     private GameObject player;
+    private AudioSource deathSound;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
+        deathSound = enemy.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -29,6 +31,10 @@ public class EnemyParts : MonoBehaviour
 
         if (collision.collider.tag == "Player")
         {
+            if (enemy.GetComponent<EnemyScript>().dead == false)
+            {
+                deathSound.Play();
+            }
             enemy.GetComponent<EnemyScript>().dead = true;
             enemy.GetComponent<Rigidbody>().isKinematic = true;
         }
