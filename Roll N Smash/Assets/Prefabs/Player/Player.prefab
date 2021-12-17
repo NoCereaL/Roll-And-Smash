@@ -119,8 +119,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cam: {fileID: 0}
-  speed: 20
-  maxSpeed: 25
+  speed: 10
+  maxSpeed: 15
   size: 1
   particleController: {fileID: 0}
   randNum: 0

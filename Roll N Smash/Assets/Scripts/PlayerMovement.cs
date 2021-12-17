@@ -46,11 +46,12 @@ public class PlayerMovement : MonoBehaviour
 
     public void AutoMove()
     {
-        rb.AddForce(new Vector3(0,0,speed));
+        //rb.AddForce(new Vector3(0,0,speed));
         if (rb.velocity.z >= maxSpeed)
         {
             rb.velocity = new Vector3(0, 0, maxSpeed);
         }
+        rb.velocity = new Vector3(0, 0, maxSpeed);
     }
 
     private void OnCollisionEnter(Collision collision)
