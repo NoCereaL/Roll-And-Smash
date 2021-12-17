@@ -33,31 +33,15 @@ public class PlayerMovement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AutoMove();
-        //TouchMove();
-        Move();
         player.transform.localScale = new Vector3(size, size, size);
+        AutoMove();
+        Move();
     }
 
     public void Move()
     {
         Vector3 movement = new Vector3(Input.GetAxis("Horizontal"), 0, 0);
         transform.position += movement * speed * Time.deltaTime;
-    }
-
-    public void TouchMove()
-    {
-        if (Input.touchCount >= 1)
-        {
-            Touch touch = Input.GetTouch(0);
-            Ray ray = Camera.main.ScreenPointToRay(touch.position);
-            Plane xy = new Plane(Vector3.forward, new Vector3(0, 0, transform.position.z));
-            float distance;
-            xy.Raycast(ray, out distance);
-            pos = ray.GetPoint(distance);
-            //pos = cam.ScreenToWorldPoint(touch.position);
-            //transform.position = new Vector3(pos.x, transform.position.y, transform.position.z);
-        }
     }
 
     public void AutoMove()
