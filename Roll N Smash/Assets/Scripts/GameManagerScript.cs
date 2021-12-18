@@ -31,7 +31,6 @@ public class GameManagerScript : MonoBehaviour
             settingsCogOff.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
             player.GetComponent<TouchControls>().enabled = true;
-            Debug.Log("Pressed");
         }
         ForTesting();
         VibrationStatus();
