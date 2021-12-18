@@ -15,7 +15,7 @@ RenderSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 9
   m_Fog: 1
-  m_FogColor: {r: 0.20392157, g: 0.65882355, b: 0.67058825, a: 1}
+  m_FogColor: {r: 0.36862746, g: 0.7921569, b: 0.8039216, a: 1}
   m_FogMode: 3
   m_FogDensity: 0.01
   m_LinearFogStart: 0
@@ -66665,6 +66665,10 @@ PrefabInstance:
       propertyPath: retryButton
       value: 
       objectReference: {fileID: 5691278856285117864}
+    - target: {fileID: 2794992395823892837, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
+      propertyPath: unluckyText
+      value: 
+      objectReference: {fileID: 5691278856285117866}
     - target: {fileID: 5900621162414592971, guid: 548f9e2e380014e43845f3b713d05eab, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -67116,6 +67120,11 @@ GameObject:
 --- !u!1 &5691278856285117865 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 768785963292700097, guid: 0356dbd60485c6947bc8165d0a6c0e9a, type: 3}
+  m_PrefabInstance: {fileID: 5691278856285117863}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &5691278856285117866 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8250242860225455239, guid: 0356dbd60485c6947bc8165d0a6c0e9a, type: 3}
   m_PrefabInstance: {fileID: 5691278856285117863}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6779958331536485460

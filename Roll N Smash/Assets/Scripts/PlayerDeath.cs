@@ -10,6 +10,7 @@ public class PlayerDeath : MonoBehaviour
     public GameObject textHolder;
     public GameObject retryButton;
     public GameObject retryAlpha;
+    public GameObject unluckyText;
 
     public AudioSource deathSound;
 
@@ -32,12 +33,14 @@ public class PlayerDeath : MonoBehaviour
         {
             player.GetComponent<PlayerMovement>().dead = true;
             player.GetComponent<PlayerMovement>().enabled = false;
+            player.GetComponent<TrailRenderer>().enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionY;
-            rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, 0.015f);
+            rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, 0.15f);
             player.GetComponent<Transform>().localScale = Vector3.zero;
             Destroy(textHolder);
             retryButton.SetActive(true);
             retryAlpha.SetActive(true);
+            unluckyText.SetActive(true);
             StartCoroutine(StopAfterSec());
         }
     }

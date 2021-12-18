@@ -5,8 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class UIScript : MonoBehaviour
 {
+    //Retry
     public GameObject retryButton;
     public GameObject retryAlpha;
+    public GameObject unluckyText;
 
     //Settings
     public GameObject cogOff;
@@ -21,6 +23,7 @@ public class UIScript : MonoBehaviour
     {
         retryButton.SetActive(false);
         retryAlpha.SetActive(false);
+        unluckyText.SetActive(false);
         GameManagerScript.settingsOpen = false;
         PlayerScript.bodyCount = 0;
         PlayerScript.tempGemCount = 0;
