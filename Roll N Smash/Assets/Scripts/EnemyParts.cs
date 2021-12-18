@@ -35,6 +35,10 @@ public class EnemyParts : MonoBehaviour
             {
                 deathSound.Play();
                 PlayerScript.bodyCount++;
+                if (GameManagerScript.vibrationEnabled == true)
+                {
+                    Vibration.VibratePop();
+                }
             }
             enemy.GetComponent<EnemyScript>().dead = true;
             enemy.GetComponent<Rigidbody>().isKinematic = true;
