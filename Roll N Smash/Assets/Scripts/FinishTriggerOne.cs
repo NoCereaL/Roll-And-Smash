@@ -60,6 +60,13 @@ public class FinishTriggerOne : MonoBehaviour
         finishSound.Play();
     }
 
+    IEnumerator AddGemsAndBodies()
+    {
+        yield return new WaitForSeconds(8);
+        int sum = (PlayerScript.bodyCount + PlayerScript.tempGemCount) + PlayerPrefs.GetInt("Gems");
+        PlayerPrefs.SetInt("Gems", sum);
+    }
+
     private void OnTriggerEnter(Collider collider)
     {
         if(collider.tag == "Player")
@@ -68,6 +75,7 @@ public class FinishTriggerOne : MonoBehaviour
             player.GetComponent<TrailRenderer>().enabled = false;
             levelBar.enabled = false;
             StartCoroutine(StopAfterSec());
+            StartCoroutine(AddGemsAndBodies());
         }
     }
 }
