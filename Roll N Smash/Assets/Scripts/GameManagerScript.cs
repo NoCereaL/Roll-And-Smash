@@ -7,6 +7,7 @@ public class GameManagerScript : MonoBehaviour
     public bool playing;
     public static bool vibrationEnabled;
     public GameObject tutorial;
+    public GameObject settings;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class GameManagerScript : MonoBehaviour
         {
             playing = true;
             tutorial.SetActive(false);
+            settings.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
         }
         ForTesting();
@@ -67,6 +69,7 @@ public class GameManagerScript : MonoBehaviour
         {
             playing = true;
             tutorial.SetActive(false);
+            settings.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
         }
     }

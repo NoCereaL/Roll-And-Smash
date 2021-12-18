@@ -21,6 +21,8 @@ public class UIScript : MonoBehaviour
     {
         retryButton.SetActive(false);
         retryAlpha.SetActive(false);
+        PlayerScript.bodyCount = 0;
+        PlayerScript.tempGemCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
