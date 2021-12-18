@@ -16,6 +16,7 @@ public class EnemyScript : MonoBehaviour
         dead = false;
         enemyMesh.GetComponent<SkinnedMeshRenderer>().material.color = color;
         textMesh.text = size + "kg";
+        textMesh.color = enemyMesh.GetComponent<SkinnedMeshRenderer>().material.color;
     }
 
     // Update is called once per frame
