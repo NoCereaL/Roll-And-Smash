@@ -2436,7 +2436,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playing: 0
   tutorial: {fileID: 5668742516886196162}
-  settings: {fileID: 3658186026258635462}
+  settingsCog: {fileID: 5768980735020875732}
+  settingsCogOff: {fileID: 3658186026258635462}
 --- !u!1 &5691278856309839935
 GameObject:
   m_ObjectHideFlags: 0

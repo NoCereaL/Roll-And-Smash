@@ -35,6 +35,7 @@ public class UIScript : MonoBehaviour
 
     public void OpenSettings()
     {
+        GameManagerScript.settingsOpen = true;
         settings.SetActive(true);
         settingsAnim.enabled = true;
         cogOn.SetActive(true);
@@ -63,6 +64,7 @@ public class UIScript : MonoBehaviour
 
     public void CloseSettings()
     {
+        GameManagerScript.settingsOpen = true;
         settings.SetActive(false);
         settingsAnim.enabled = false;
         cogOn.SetActive(false);

@@ -1,37 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class GameManagerScript : MonoBehaviour
 {
     public bool playing;
+    public static bool settingsOpen;
     public static bool vibrationEnabled;
     public GameObject tutorial;
-    public GameObject settings;
+    public GameObject settingsCog;
+    public GameObject settingsCogOff;
     private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
         player = GameObject.Find("Player");
-        if (!PlayerPrefs.HasKey("Vibration"))
-        {
-            vibrationEnabled = true;
-        }
-        if (!PlayerPrefs.HasKey("Sound"))
-        {
-            AudioListener.volume = 1;
-        }
         Vibration.Init();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount >= 1)
+        if(Input.touchCount >= 1 && settingsOpen == false)
         {
             playing = true;
             tutorial.SetActive(false);
-            settings.SetActive(false);
+            settingsCog.SetActive(false);
+            settingsCogOff.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
         }
         ForTesting();
@@ -39,8 +36,22 @@ public class GameManagerScript : MonoBehaviour
         SoundStatus();
     }
 
+    public void CheckDefault()
+    {
+        if (!PlayerPrefs.HasKey("Vibration"))
+        {
+            vibrationEnabled = true;
+        }
+        if (!PlayerPrefs.HasKey("Sound"))
+        {
+            AudioListener.volume = 1;
+            PlayerPrefs.SetInt("Sound", 1);
+        }
+    }
+
     public void VibrationStatus()
     {
+        CheckDefault();
         if (PlayerPrefs.GetInt("Vibration") == 1)
         {
             vibrationEnabled = true;
@@ -53,6 +64,7 @@ public class GameManagerScript : MonoBehaviour
 
     public void SoundStatus()
     {
+        CheckDefault();
         if(PlayerPrefs.GetInt("Sound") == 1)
         {
             AudioListener.volume = 1;
@@ -69,7 +81,8 @@ public class GameManagerScript : MonoBehaviour
         {
             playing = true;
             tutorial.SetActive(false);
-            settings.SetActive(false);
+            settingsCog.SetActive(false);
+            settingsCogOff.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
         }
     }
