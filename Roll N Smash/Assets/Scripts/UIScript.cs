@@ -21,6 +21,7 @@ public class UIScript : MonoBehaviour
     {
         retryButton.SetActive(false);
         retryAlpha.SetActive(false);
+        GameManagerScript.settingsOpen = false;
         PlayerScript.bodyCount = 0;
         PlayerScript.tempGemCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
@@ -30,6 +31,7 @@ public class UIScript : MonoBehaviour
     {
         PlayerScript.bodyCount = 0;
         PlayerScript.tempGemCount = 0;
+        GameManagerScript.settingsOpen = false;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 
@@ -64,7 +66,7 @@ public class UIScript : MonoBehaviour
 
     public void CloseSettings()
     {
-        GameManagerScript.settingsOpen = true;
+        GameManagerScript.settingsOpen = false;
         settings.SetActive(false);
         settingsAnim.enabled = false;
         cogOn.SetActive(false);

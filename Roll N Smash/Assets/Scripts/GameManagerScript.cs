@@ -6,7 +6,7 @@ using UnityEngine.EventSystems;
 
 public class GameManagerScript : MonoBehaviour
 {
-    public bool playing;
+    public static bool playing;
     public static bool settingsOpen;
     public static bool vibrationEnabled;
     public GameObject tutorial;
@@ -23,13 +23,15 @@ public class GameManagerScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(Input.touchCount >= 1 && settingsOpen == false)
+        if(Input.touchCount >= 1 && settingsOpen == false && !IsTouchOverUI() && Input.GetTouch(0).phase == TouchPhase.Began)
         {
             playing = true;
             tutorial.SetActive(false);
             settingsCog.SetActive(false);
             settingsCogOff.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
+            player.GetComponent<TouchControls>().enabled = true;
+            Debug.Log("Pressed");
         }
         ForTesting();
         VibrationStatus();
@@ -85,5 +87,12 @@ public class GameManagerScript : MonoBehaviour
             settingsCogOff.SetActive(false);
             player.GetComponent<PlayerMovement>().enabled = true;
         }
+    }
+
+    public bool IsTouchOverUI()
+    {
+        Touch touch = Input.GetTouch(0);
+        int id = touch.fingerId;
+        return EventSystem.current.IsPointerOverGameObject(id);
     }
 }
