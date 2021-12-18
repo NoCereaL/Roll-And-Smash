@@ -40,6 +40,10 @@ public class PlayerScript : MonoBehaviour
             gem.SetActive(true);
             gem.transform.position = new Vector3(player.transform.position.x, gem.transform.position.y, gem.transform.position.z);
             collectSound.Play();
+            if(GameManagerScript.vibrationEnabled == true)
+            {
+                Vibration.VibratePeek();
+            }
         }
     }
 }

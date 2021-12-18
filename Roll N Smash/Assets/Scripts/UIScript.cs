@@ -103,4 +103,20 @@ public class UIScript : MonoBehaviour
         sound.SetActive(false);
         soundOff.SetActive(true);
     }
+
+    public void HapticDown()
+    {
+        if(GameManagerScript.vibrationEnabled == true)
+        {
+            Vibration.VibratePop();
+        }
+    }
+
+    public void HapticUp()
+    {
+        if (GameManagerScript.vibrationEnabled == true)
+        {
+            Vibration.VibratePeek();
+        }
+    }
 }
