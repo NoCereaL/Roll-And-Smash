@@ -7,6 +7,8 @@ public class PlayerScript : MonoBehaviour
 {
     public TextMeshPro textMesh;
     private PlayerMovement player;
+    public static int bodyCount;
+    public static int tempGemCount;
     public AudioSource collectSound;
     public GameObject uiGems;
     public Transform ui;
@@ -32,6 +34,7 @@ public class PlayerScript : MonoBehaviour
         if(collider.tag == "gem")
         {
             PlayerPrefs.SetInt("Gems", GetGems()+collider.gameObject.GetComponent<GemValue>().gemValue);
+            PlayerScript.tempGemCount++;
             Destroy(collider.gameObject);
             GameObject gem = Instantiate(uiGems, ui);
             gem.SetActive(true);

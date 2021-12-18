@@ -15,6 +15,9 @@ public class FinishTriggerOne : MonoBehaviour
     //UI
     public GameObject nextLevel;
     public GameObject alpha;
+    public GameObject greatText;
+    public GameObject tempGems;
+    public GameObject tempBodies;
     public AudioSource finishSound;
 
     // Start is called before the first frame update
@@ -51,6 +54,9 @@ public class FinishTriggerOne : MonoBehaviour
         Instantiate(dancingPlayer, playerTransfrom);
         nextLevel.SetActive(true);
         alpha.SetActive(true);
+        greatText.SetActive(true);
+        tempGems.SetActive(true);
+        tempBodies.SetActive(true);
         finishSound.Play();
     }
 
@@ -59,6 +65,7 @@ public class FinishTriggerOne : MonoBehaviour
         if(collider.tag == "Player")
         {
             player.GetComponent<PlayerDeath>().enabled = false;
+            player.GetComponent<TrailRenderer>().enabled = false;
             levelBar.enabled = false;
             StartCoroutine(StopAfterSec());
         }

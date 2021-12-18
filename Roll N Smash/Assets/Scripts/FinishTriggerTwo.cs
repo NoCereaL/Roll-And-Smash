@@ -13,6 +13,9 @@ public class FinishTriggerTwo : MonoBehaviour
     //UI
     public GameObject nextLevel;
     public GameObject alpha;
+    public GameObject greatText;
+    public GameObject tempGems;
+    public GameObject tempBodies;
     public AudioSource finishSound;
 
     // Start is called before the first frame update
@@ -29,6 +32,9 @@ public class FinishTriggerTwo : MonoBehaviour
         Instantiate(dancingPlayer, playerTransfrom);
         nextLevel.SetActive(true);
         alpha.SetActive(true);
+        greatText.SetActive(true);
+        tempGems.SetActive(true);
+        tempBodies.SetActive(true);
         finishSound.Play();
     }
 

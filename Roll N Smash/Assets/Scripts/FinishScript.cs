@@ -22,7 +22,7 @@ public class FinishScript : MonoBehaviour
         if(collision.collider.tag == "Player")
         {
             player.GetComponent<PlayerMovement>().enabled = false;
-
+            player.GetComponent<TrailRenderer>().enabled = false;
         }
     }
 }

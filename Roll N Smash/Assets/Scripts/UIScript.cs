@@ -16,6 +16,8 @@ public class UIScript : MonoBehaviour
 
     public void nextLevel()
     {
+        PlayerScript.bodyCount = 0;
+        PlayerScript.tempGemCount = 0;
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
     }
 }

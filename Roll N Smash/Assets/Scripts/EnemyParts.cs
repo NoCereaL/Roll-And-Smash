@@ -34,6 +34,7 @@ public class EnemyParts : MonoBehaviour
             if (enemy.GetComponent<EnemyScript>().dead == false)
             {
                 deathSound.Play();
+                PlayerScript.bodyCount++;
             }
             enemy.GetComponent<EnemyScript>().dead = true;
             enemy.GetComponent<Rigidbody>().isKinematic = true;

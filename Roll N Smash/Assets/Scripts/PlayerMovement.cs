@@ -18,12 +18,17 @@ public class PlayerMovement : MonoBehaviour
     public AudioSource increaseSound;
     public AudioSource decreaseSound;
 
+    //Trail
+    private TrailRenderer trail;
+    public Material trailMat;
+
     [SerializeField] Vector3 pos;
     // Start is called before the first frame update
     void Start()
     {
         player = this.gameObject;
         rb = this.gameObject.GetComponent<Rigidbody>();
+        trail = this.gameObject.GetComponent<TrailRenderer>();
         Color32[] color = {Color.red, Color.green, Color.blue };
         randNum = Random.Range(0, 3);
         player.GetComponent<MeshRenderer>().material.color = color[randNum];
@@ -34,6 +39,9 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         player.transform.localScale = new Vector3(size, size, size);
+        trail.startWidth = size - 0.5f;
+        trail.time = (size*2) / 10f;
+        trailMat.color = player.GetComponent<MeshRenderer>().material.color;
         AutoMove();
         Move();
     }
