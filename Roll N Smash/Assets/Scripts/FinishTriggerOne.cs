@@ -58,6 +58,10 @@ public class FinishTriggerOne : MonoBehaviour
         tempGems.SetActive(true);
         tempBodies.SetActive(true);
         finishSound.Play();
+        if (GameManagerScript.vibrationEnabled == true)
+        {
+            Vibration.VibrateNope();
+        }
     }
 
     IEnumerator AddGemsAndBodies()

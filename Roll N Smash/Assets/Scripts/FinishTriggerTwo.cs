@@ -36,6 +36,10 @@ public class FinishTriggerTwo : MonoBehaviour
         tempGems.SetActive(true);
         tempBodies.SetActive(true);
         finishSound.Play();
+        if(GameManagerScript.vibrationEnabled == true)
+        {
+            Vibration.VibrateNope();
+        }
     }
 
     private void OnTriggerEnter(Collider collider)
