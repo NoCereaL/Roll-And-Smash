@@ -36,7 +36,8 @@ public class UIScript : MonoBehaviour
         PlayerScript.tempGemCount = 0;
         GameManagerScript.settingsOpen = false;
         PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex+1);
+        SceneManager.LoadScene("LevelLoadingScene");
     }
 
     public void OpenSettings()
