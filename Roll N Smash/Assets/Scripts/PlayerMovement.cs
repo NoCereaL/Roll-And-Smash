@@ -6,7 +6,7 @@ public class PlayerMovement : MonoBehaviour
 {
     [SerializeField] Camera cam;
     [SerializeField] float speed;
-    [SerializeField] float maxSpeed;
+    public float maxSpeed;
     public float size;
     private float defaultSpeed;
     [SerializeField] GameObject particleController;
@@ -23,6 +23,7 @@ public class PlayerMovement : MonoBehaviour
     public Material trailMat;
 
     [SerializeField] Vector3 pos;
+    private Vector3 startPos;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,6 +34,7 @@ public class PlayerMovement : MonoBehaviour
         randNum = Random.Range(0, 3);
         player.GetComponent<MeshRenderer>().material.color = color[randNum];
         defaultSpeed = maxSpeed;
+        startPos = transform.position;
     }
 
     // Update is called once per frame
@@ -60,26 +62,12 @@ public class PlayerMovement : MonoBehaviour
             rb.velocity = new Vector3(0, 0, maxSpeed);
         }
         rb.velocity = new Vector3(0, 0, maxSpeed);
+        //rb.AddForce(new Vector3(0,-50,0), ForceMode.Force);
+        rb.AddForce(new Vector3(0,-30f,0), ForceMode.Acceleration);     //Adds Gravity to the player so it falls back down to the ground
     }
 
-    private void OnCollisionEnter(Collision collision)
+    public void AirTimeCheck()
     {
-        //GameObject PickUp = collision.collider.gameObject;
-        /*if(collision.collider.tag == "enemy" && PickUp.GetComponent<EnemyScript>().dead == false)
-        {
-            size -= 1;
-            player.transform.localScale = new Vector3(size,size,size);
-            PickUp.GetComponent<EnemyScript>().dead = true;
-
-            cam.fieldOfView++;
-            CameraScript.cameraPos.x--;
-            CameraScript.cameraPos.y++;
-        }*/
-        //cam.fieldOfView++;
-        //maxSpeed += 100;
-        //rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
-
-        //StartCoroutine(thrustForward());
     }
 
     private void OnTriggerEnter(Collider collider)
@@ -109,12 +97,4 @@ public class PlayerMovement : MonoBehaviour
         }
     }
 
-    IEnumerator thrustForward()
-    {
-        maxSpeed = 100;
-        rb.AddForce(new Vector3(0, 0, 50), ForceMode.Impulse);
-        yield return new WaitForSeconds(0.1f);
-        maxSpeed = defaultSpeed;
-    }
-    //Create a trigger on/infront of enemies to increase player speed using a courotine when trigger enter to increase speed when barging
 }
