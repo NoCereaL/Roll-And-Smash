@@ -39,7 +39,7 @@ public class EnemyRagdoll : MonoBehaviour
 
             enemy.GetComponent<Animator>().enabled = false;
 
-            //rigidbody.AddForce(new Vector3(0,0,400), ForceMode.Impulse);
+            enemy.GetComponent<Rigidbody>().isKinematic = false;
 
             
         }
