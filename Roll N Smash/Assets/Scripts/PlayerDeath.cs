@@ -34,6 +34,7 @@ public class PlayerDeath : MonoBehaviour
             player.GetComponent<PlayerMovement>().dead = true;
             player.GetComponent<PlayerMovement>().enabled = false;
             player.GetComponent<TrailRenderer>().enabled = false;
+            player.GetComponent<SphereCollider>().enabled = false;
             rb.constraints = RigidbodyConstraints.FreezePositionY;
             rb.velocity = Vector3.MoveTowards(rb.velocity, Vector3.zero, 0.15f);
             player.GetComponent<Transform>().localScale = Vector3.zero;
