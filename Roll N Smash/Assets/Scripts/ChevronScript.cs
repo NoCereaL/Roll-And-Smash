@@ -5,11 +5,12 @@ using UnityEngine;
 public class ChevronScript : MonoBehaviour
 {
     private GameObject player;
-
+    private AudioSource speedSound;
     // Start is called before the first frame update
     void Start()
     {
-        player = GameObject.Find("Player");    
+        player = GameObject.Find("Player");
+        speedSound = this.gameObject.GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -23,6 +24,7 @@ public class ChevronScript : MonoBehaviour
         if(colliider.tag == "Player")
         {
             player.GetComponent<PlayerMovement>().maxSpeed += 5;
+            speedSound.Play();
         }
     }
 }
