@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class FinishTriggerOne : MonoBehaviour
 {
@@ -78,6 +79,7 @@ public class FinishTriggerOne : MonoBehaviour
             player.GetComponent<PlayerDeath>().enabled = false;
             player.GetComponent<TrailRenderer>().enabled = false;
             levelBar.enabled = false;
+            PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);
             StartCoroutine(StopAfterSec());
             StartCoroutine(AddGemsAndBodies());
         }
