@@ -89,7 +89,7 @@ public class FinishTriggerOne : MonoBehaviour
 
     IEnumerator ShowAds()
     {
-        yield return new WaitForSeconds(2);
+        yield return new WaitForSeconds(1.5f);
         if(Application.platform == RuntimePlatform.Android)
         {
             Advertisement.Show("Interstitial_Android");
