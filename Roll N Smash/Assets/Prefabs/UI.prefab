@@ -2666,6 +2666,8 @@ GameObject:
   - component: {fileID: 6673545296877532305}
   - component: {fileID: 6507307403246971030}
   - component: {fileID: 105775360319210318}
+  - component: {fileID: 94034200063241206}
+  - component: {fileID: 6164679420968014474}
   m_Layer: 5
   m_Name: UI
   m_TagString: Untagged
@@ -2865,6 +2867,35 @@ MonoBehaviour:
   tutorial: {fileID: 5668742516886196162}
   settingsCog: {fileID: 5768980735020875732}
   settingsCogOff: {fileID: 3658186026258635462}
+--- !u!114 &94034200063241206
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691278856199257505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7962f735ef2ada14faa29e432d247770, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _iOSGameID: 4517518
+  _androidGameID: 4517519
+  _testMode: 0
+--- !u!114 &6164679420968014474
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5691278856199257505}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afa5a542245383949835b7e6ad75c43b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  androidPlacementId: Android_Banner
+  iOSPlacementId: iOS_Banner
 --- !u!1 &5691278856309839935
 GameObject:
   m_ObjectHideFlags: 0

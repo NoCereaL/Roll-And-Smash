@@ -204,7 +204,9 @@ MonoBehaviour:
   textHolder: {fileID: 0}
   retryButton: {fileID: 0}
   retryAlpha: {fileID: 0}
+  unluckyText: {fileID: 0}
   deathSound: {fileID: 1093560857698702312}
+  showAdsAfter: 3
 --- !u!82 &8184207245030957054
 AudioSource:
   m_ObjectHideFlags: 0

@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Advertisements;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -14,11 +15,16 @@ public class PlayerDeath : MonoBehaviour
 
     public AudioSource deathSound;
 
+    private int adChance;
+    private int showAdsAfter;
+
     // Start is called before the first frame update
     void Start()
     {
         player = this.gameObject;
         rb = player.GetComponent<Rigidbody>();
+        showAdsAfter = 1;
+        adChance = Random.Range(0, 2);
     }
 
     // Update is called once per frame
@@ -42,7 +48,7 @@ public class PlayerDeath : MonoBehaviour
             retryButton.SetActive(true);
             retryAlpha.SetActive(true);
             unluckyText.SetActive(true);
-            StartCoroutine(StopAfterSec());
+            //StartCoroutine(StopAfterSec());
         }
     }
 
@@ -57,6 +63,7 @@ public class PlayerDeath : MonoBehaviour
         if (player.GetComponent<PlayerMovement>().size <= 0)
         {
             deathSound.Play();
+            ShowAdsAfterDeath();
         }
     }
 
@@ -65,6 +72,25 @@ public class PlayerDeath : MonoBehaviour
         if (player.GetComponent<PlayerMovement>().size <= 0)
         {
             deathSound.Play();
+        }
+    }
+
+    public void ShowAdsAfterDeath()
+    {
+        if(adChance == showAdsAfter)
+        {
+            if (Application.platform == RuntimePlatform.Android)
+            {
+                Advertisement.Show("Interstitial_Android");
+            }
+            if (Application.platform == RuntimePlatform.IPhonePlayer)
+            {
+                Advertisement.Show("Interstitial_iOS");
+            }
+            if (Application.platform == RuntimePlatform.WindowsEditor)
+            {
+                Advertisement.Show("Interstitial_Android");
+            }
         }
     }
 }

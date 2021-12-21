@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Advertisements;
 
 public class FinishTriggerOne : MonoBehaviour
 {
@@ -67,7 +68,7 @@ public class FinishTriggerOne : MonoBehaviour
 
     IEnumerator AddGemsAndBodies()
     {
-        yield return new WaitForSeconds(8);
+        yield return new WaitForSeconds(7.5f);
         int sum = (PlayerScript.bodyCount + PlayerScript.tempGemCount) + PlayerPrefs.GetInt("Gems");
         PlayerPrefs.SetInt("Gems", sum);
     }
@@ -82,6 +83,24 @@ public class FinishTriggerOne : MonoBehaviour
             PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);
             StartCoroutine(StopAfterSec());
             StartCoroutine(AddGemsAndBodies());
+            StartCoroutine(ShowAds());
+        }
+    }
+
+    IEnumerator ShowAds()
+    {
+        yield return new WaitForSeconds(2);
+        if(Application.platform == RuntimePlatform.Android)
+        {
+            Advertisement.Show("Interstitial_Android");
+        }
+        if(Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            Advertisement.Show("Interstitial_iOS");
+        }
+        if(Application.platform == RuntimePlatform.WindowsEditor)
+        {
+            Advertisement.Show("Interstitial_Android");
         }
     }
 }
