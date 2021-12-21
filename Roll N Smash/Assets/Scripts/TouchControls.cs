@@ -27,7 +27,10 @@ public class TouchControls : MonoBehaviour
             xy.Raycast(ray, out distance);
             pos = ray.GetPoint(distance);
             //pos = cam.ScreenToWorldPoint(touch.position);
-            transform.position = new Vector3(pos.x, player.transform.position.y, player.transform.position.z);
+            if (pos.x <= 9 && pos.x >= -9)
+            {
+                transform.position = new Vector3(pos.x, player.transform.position.y, player.transform.position.z);
+            }
         }
     }
 }
