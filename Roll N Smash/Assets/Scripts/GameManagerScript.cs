@@ -20,6 +20,10 @@ public class GameManagerScript : MonoBehaviour
         player = GameObject.Find("Player");
         Vibration.Init();
         TinySauce.OnGameStarted(levelNumber: PlayerPrefs.GetInt("Level")+"");
+        if(Application.platform == RuntimePlatform.IPhonePlayer)
+        {
+            Application.targetFrameRate = 60;
+        }
     }
 
     // Update is called once per frame
