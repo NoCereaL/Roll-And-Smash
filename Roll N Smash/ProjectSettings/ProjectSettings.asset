@@ -695,9 +695,11 @@ PlayerSettings:
   webGLThreadsSupport: 0
   webGLDecompressionFallback: 0
   scriptingDefineSymbols:
+    4: VS_ATT
     7: VS_ATT
   additionalCompilerArguments: {}
-  platformArchitecture: {}
+  platformArchitecture:
+    iPhone: 2
   scriptingBackend:
     Android: 1
   il2cppCompilerConfiguration: {}
