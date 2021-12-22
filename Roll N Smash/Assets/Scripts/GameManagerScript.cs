@@ -19,6 +19,7 @@ public class GameManagerScript : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Vibration.Init();
+        TinySauce.OnGameStarted(levelNumber: PlayerPrefs.GetInt("Level")+"");
     }
 
     // Update is called once per frame
