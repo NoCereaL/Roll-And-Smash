@@ -32,7 +32,7 @@ public class UIScript : MonoBehaviour
 
     public void nextLevel()
     {
-        //TinySauce.OnGameFinished(true, PlayerScript.tempGemCount);
+        TinySauce.OnGameFinished(true, PlayerScript.tempGemCount);
         PlayerScript.bodyCount = 0;
         PlayerScript.tempGemCount = 0;
         GameManagerScript.settingsOpen = false;

@@ -64,7 +64,7 @@ public class PlayerDeath : MonoBehaviour
         {
             deathSound.Play();
             ShowAdsAfterDeath();
-            //TinySauce.OnGameFinished(false, PlayerScript.tempGemCount);
+            TinySauce.OnGameFinished(false, PlayerScript.tempGemCount);
         }
     }
 
