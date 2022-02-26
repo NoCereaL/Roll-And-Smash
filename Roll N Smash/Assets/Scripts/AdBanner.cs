@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 public class AdBanner : MonoBehaviour
 {
@@ -35,7 +35,7 @@ public class AdBanner : MonoBehaviour
     IEnumerator ShowBanner()
     {
         yield return new WaitForSeconds(1);
-        Advertisement.Banner.Show(_placementId);
-        Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
+        //Advertisement.Banner.Show(_placementId);
+        //Advertisement.Banner.SetPosition(BannerPosition.BOTTOM_CENTER);
     }
 }

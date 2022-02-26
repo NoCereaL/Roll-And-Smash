@@ -2,7 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
+using Yodo1.MAS;
 
 public class PlayerDeath : MonoBehaviour
 {
@@ -78,19 +79,22 @@ public class PlayerDeath : MonoBehaviour
 
     public void ShowAdsAfterDeath()
     {
-        if(adChance == showAdsAfter)
+        if(adChance >= showAdsAfter)
         {
             if (Application.platform == RuntimePlatform.Android)
             {
-                Advertisement.Show("Interstitial_Android");
+                //Advertisement.Show("Interstitial_Android");
+                if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
             }
             if (Application.platform == RuntimePlatform.IPhonePlayer)
             {
-                Advertisement.Show("Interstitial_iOS");
+                //Advertisement.Show("Interstitial_iOS");
+                if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
             }
             if (Application.platform == RuntimePlatform.WindowsEditor)
             {
-                Advertisement.Show("Interstitial_Android");
+                //Advertisement.Show("Interstitial_Android");
+                if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
             }
         }
     }

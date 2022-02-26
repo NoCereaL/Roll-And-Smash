@@ -1,7 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Advertisements;
+//using UnityEngine.Advertisements;
 
 public class InitiateAds : MonoBehaviour
 {
@@ -25,7 +25,7 @@ public class InitiateAds : MonoBehaviour
         {
             _gameID = _androidGameID;
         }
-        Advertisement.Initialize(_gameID, _testMode);
+        //Advertisement.Initialize(_gameID, _testMode);
     }
 
     // Update is called once per frame
@@ -33,11 +33,11 @@ public class InitiateAds : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
-            Advertisement.Show("Rewarded_Android");
+            //Advertisement.Show("Rewarded_Android");
         }
         if (Input.GetKeyDown(KeyCode.R))
         {
-            Advertisement.Show("Rewarded_iOS");
+            //Advertisement.Show("Rewarded_iOS");
         }
     }
 }

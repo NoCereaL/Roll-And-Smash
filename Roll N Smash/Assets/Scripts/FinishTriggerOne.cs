@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using UnityEngine.Advertisements;
+using Yodo1.MAS;
 
 public class FinishTriggerOne : MonoBehaviour
 {
@@ -91,17 +92,20 @@ public class FinishTriggerOne : MonoBehaviour
     IEnumerator ShowAds()
     {
         yield return new WaitForSeconds(1.5f);
-        if(Application.platform == RuntimePlatform.Android)
+        if (Application.platform == RuntimePlatform.Android)
         {
-            Advertisement.Show("Interstitial_Android");
+            //Advertisement.Show("Interstitial_Android");
+            if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
         }
-        if(Application.platform == RuntimePlatform.IPhonePlayer)
+        if (Application.platform == RuntimePlatform.IPhonePlayer)
         {
-            Advertisement.Show("Interstitial_iOS");
+            //Advertisement.Show("Interstitial_iOS");
+            if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
         }
-        if(Application.platform == RuntimePlatform.WindowsEditor)
+        if (Application.platform == RuntimePlatform.WindowsEditor)
         {
-            Advertisement.Show("Interstitial_Android");
+            //Advertisement.Show("Interstitial_Android");
+            if (Yodo1U3dMas.IsInterstitialAdLoaded()) Yodo1U3dMas.ShowInterstitialAd();
         }
     }
 }
