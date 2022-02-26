@@ -9,9 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6f78192cec1344d83a177ac5e6139ab3, type: 3}
+  m_Script: {fileID: 0}
   m_Name: Settings
-  m_EditorClassIdentifier: 
+  m_EditorClassIdentifier: Assembly-CSharp:GameAnalyticsSDK.Setup:Settings
   TotalMessagesSubmitted: 0
   TotalMessagesFailed: 0
   DesignMessagesSubmitted: 0
@@ -25,33 +25,27 @@ MonoBehaviour:
   UserMessagesSubmitted: 0
   UserMessagesFailed: 0
   CustomArea: 
-  gameKey:
-  - c9b9a8146603515972959a242dd308fa
-  secretKey:
-  - 9844691254e1492d31d71637e11c35d70afc176a
-  Build:
-  - 0.1
-  SelectedPlatformOrganization:
-  - 
-  SelectedPlatformStudio:
-  - 
-  SelectedPlatformGame:
-  - 
-  SelectedPlatformGameID: ffffffff
-  SelectedOrganization: 00000000
-  SelectedStudio: 00000000
-  SelectedGame: 00000000
+  gameKey: []
+  secretKey: []
+  Build: []
+  SelectedPlatformOrganization: []
+  SelectedPlatformStudio: []
+  SelectedPlatformGame: []
+  SelectedPlatformGameID: 
+  SelectedOrganization: 
+  SelectedStudio: 
+  SelectedGame: 
   NewVersion: 
   Changes: 
-  SignUpOpen: 0
+  SignUpOpen: 1
   StudioName: 
   GameName: 
   OrganizationName: 
   OrganizationIdentifier: 
-  EmailGA: therealskm@hotmail.com
-  IntroScreen: 0
-  InfoLogEditor: 0
-  InfoLogBuild: 0
+  EmailGA: 
+  IntroScreen: 1
+  InfoLogEditor: 1
+  InfoLogBuild: 1
   VerboseLogBuild: 0
   UseManualSessionHandling: 0
   SendExampleGameDataToMyGame: 0
@@ -62,9 +56,9 @@ MonoBehaviour:
   CustomDimensions03: []
   ResourceItemTypes: []
   ResourceCurrencies: []
-  LastCreatedGamePlatform: -1
-  Platforms: 0b000000
-  CurrentInspectorState: 1
+  LastCreatedGamePlatform: 0
+  Platforms: 
+  CurrentInspectorState: 0
   ClosedHints: 
   DisplayHints: 0
   DisplayHintsScrollState: {x: 0, y: 0}
@@ -91,7 +85,7 @@ MonoBehaviour:
   IncludeGooglePlay: 1
   FpsCriticalThreshold: 20
   FpsCirticalSubmitInterval: 1
-  PlatformFoldOut: 01
+  PlatformFoldOut: 
   CustomDimensions01FoldOut: 0
   CustomDimensions02FoldOut: 0
   CustomDimensions03FoldOut: 0

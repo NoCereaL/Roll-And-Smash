@@ -81,7 +81,7 @@ public class FinishTriggerOne : MonoBehaviour
             player.GetComponent<TrailRenderer>().enabled = false;
             levelBar.enabled = false;
             PlayerPrefs.SetInt("Level", SceneManager.GetActiveScene().buildIndex + 1);
-            TinySauce.OnGameFinished(true, PlayerScript.tempGemCount);
+            //TinySauce.OnGameFinished(true, PlayerScript.tempGemCount);
             StartCoroutine(StopAfterSec());
             StartCoroutine(AddGemsAndBodies());
             StartCoroutine(ShowAds());

@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
-using GameAnalyticsSDK;
+//using GameAnalyticsSDK;
 
 public class GameManagerScript : MonoBehaviour
 {
@@ -20,8 +20,8 @@ public class GameManagerScript : MonoBehaviour
     {
         player = GameObject.Find("Player");
         Vibration.Init();
-        GameAnalytics.Initialize();
-        TinySauce.OnGameStarted(levelNumber: PlayerPrefs.GetInt("Level")+"");
+        //GameAnalytics.Initialize();
+        //TinySauce.OnGameStarted(levelNumber: PlayerPrefs.GetInt("Level")+"");
         if(Application.platform == RuntimePlatform.IPhonePlayer)
         {
             Application.targetFrameRate = 60;
